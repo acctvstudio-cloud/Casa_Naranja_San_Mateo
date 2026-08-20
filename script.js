@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let playerCount = 0;
 
- 
   if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
@@ -23,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
- 
   function addPlayerRow() {
     playerCount++;
     const row = document.createElement('div');
@@ -42,25 +40,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     playersList.appendChild(row);
 
-    
     row.querySelector('.btn-remove').addEventListener('click', () => {
       row.remove();
     });
   }
 
-   addPlayerRow();
+  addPlayerRow();
 
-  
   if (addPlayerBtn) {
     addPlayerBtn.addEventListener('click', addPlayerRow);
   }
 
-  
   if (teamForm) {
     teamForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      
       const playerRows = document.querySelectorAll('.player-row');
       let playersData = [];
       let ageValid = true;
@@ -88,10 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      
       hiddenPlayersInput.value = playersData.join(' | ');
 
-      
       submitBtn.disabled = true;
       submitBtn.textContent = 'ENVIANDO REGISTRO...';
 
@@ -109,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
           showStatus('¡Registro enviado con éxito! Nos pondremos en contacto contigo.', 'success');
           teamForm.reset();
           playersList.innerHTML = '';
-          addPlayerRow(); 
+          addPlayerRow();
         } else {
           const data = await response.json();
           if (Object.hasOwn(data, 'errors')) {
