@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ELEMENTOS DEL DOM
   const menuToggle = document.getElementById('menuToggle');
   const navMenu = document.getElementById('navMenu');
   const addPlayerBtn = document.getElementById('addPlayerBtn');
@@ -11,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let playerCount = 0;
 
-  // 1. NAVEGACIÓN MÓVIL TOGGLE
+ 
   if (menuToggle && navMenu) {
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
@@ -24,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. FUNCIÓN PARA AGREGAR JUGADOR DINÁMICAMENTE
+ 
   function addPlayerRow() {
     playerCount++;
     const row = document.createElement('div');
@@ -43,26 +42,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     playersList.appendChild(row);
 
-    // Evento de eliminación
+    
     row.querySelector('.btn-remove').addEventListener('click', () => {
       row.remove();
     });
   }
 
-  // Inicializar con 1 jugador por defecto
-  addPlayerRow();
+   addPlayerRow();
 
-  // Evento botón agregar jugador
+  
   if (addPlayerBtn) {
     addPlayerBtn.addEventListener('click', addPlayerRow);
   }
 
-  // 3. ENVÍO Y PROCESAMIENTO DEL FORMULARIO CON FORMSPREE
+  
   if (teamForm) {
     teamForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // Recopilar lista de jugadores
+      
       const playerRows = document.querySelectorAll('.player-row');
       let playersData = [];
       let ageValid = true;
@@ -90,10 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Guardar string formateado en el hidden input para Formspree
+      
       hiddenPlayersInput.value = playersData.join(' | ');
 
-      // Estado de carga en botón
+      
       submitBtn.disabled = true;
       submitBtn.textContent = 'ENVIANDO REGISTRO...';
 
@@ -111,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
           showStatus('¡Registro enviado con éxito! Nos pondremos en contacto contigo.', 'success');
           teamForm.reset();
           playersList.innerHTML = '';
-          addPlayerRow(); // Reiniciar con 1 fila limpia
+          addPlayerRow(); 
         } else {
           const data = await response.json();
           if (Object.hasOwn(data, 'errors')) {
