@@ -288,45 +288,50 @@ h1, h2, h3 {
 .hero-info-grid {
   display: flex;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
   margin-bottom: 2.5rem;
   width: 100%;
 }
 
-/* TARJETAS NARANJAS CON TEXTO AMPLIADO */
+/* TARJETAS NARANJAS CON TEXTO DESTACADO Y CENTRADO */
 .info-card {
   background-color: var(--primary);
   border: 2px solid var(--primary-dark);
-  padding: 1.6rem 1.2rem;
-  flex: 1 1 200px;
-  max-width: 320px;
+  padding: 1.8rem 1rem;
+  flex: 1 1 260px;
+  min-height: 140px;
+  max-width: 380px;
   border-radius: var(--radius-card);
   box-shadow: 0 8px 20px rgba(255, 130, 0, 0.25);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .info-card .label {
   display: block;
-  font-size: clamp(0.95rem, 3.5vw, 1.15rem);
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
   color: #FFFFFF;
   opacity: 0.95;
   font-weight: 900;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
+  margin-bottom: 0.3rem;
 }
 
 .info-card .value {
   display: block;
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 7vw, 2.6rem);
+  font-size: clamp(2.2rem, 8.5vw, 3.8rem) !important;
+  line-height: 1;
   color: #FFFFFF;
-  line-height: 1.1;
-  margin-top: 0.4rem;
-  letter-spacing: 1px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  width: 100%;
+  word-break: break-word;
 }
 
 /* CONVOCATORIA */
