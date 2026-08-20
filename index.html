@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LA COPA NEZA | Torneo de Fútbol</title>
+  
+  <!-- Google Fonts: Bebas Neue para títulos deportivos de impacto + Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="nav-container">
+      <a href="#" class="logo">LA COPA <span>NEZA</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <nav class="nav-menu" id="navMenu">
+        <a href="#inicio" class="nav-link">Inicio</a>
+        <a href="#convocatoria" class="nav-link">Convocatoria</a>
+        <a href="#registro" class="nav-link nav-btn">Registro</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+      <div class="hero-content">
+        <div class="badge-organizer">TE INVITA OMAR SANABRIA</div>
+        <h1 class="hero-title">LA COPA <span>NEZA</span></h1>
+        
+        <div class="hero-info-grid">
+          <div class="info-card">
+            <span class="label">FECHA</span>
+            <span class="value">19 DE SEPTIEMBRE</span>
+          </div>
+          <div class="info-card">
+            <span class="label">HORA</span>
+            <span class="value">13:00 HRS.</span>
+          </div>
+          <div class="info-card">
+            <span class="label">LUGAR</span>
+            <span class="value">ESTADIO NEZA 86</span>
+          </div>
+        </div>
+
+        <a href="#registro" class="btn btn-primary">REGÍSTRATE AHORA</a>
+      </div>
+    </section>
+
+    <!-- CONVOCATORIA SECTION -->
+    <section id="convocatoria" class="convocatoria">
+      <div class="container">
+        <h2 class="section-title">¡CONVOCATORIA <span>ABIERTA!</span></h2>
+        <p class="section-subtitle">
+          Se invita a todos los equipos de <strong>San Mateo Atenco</strong> con integrantes de entre <strong>25 y 35 años</strong> a participar en el torneo más emblemático de la región.
+        </p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="icon-wrapper">👥</div>
+            <h3>PARTICIPANTES</h3>
+            <p>Jugadores de 25 a 35 años de edad cumplidos.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon-wrapper">⚽</div>
+            <h3>EQUIPOS</h3>
+            <p>Exclusivo para equipos representativos de San Mateo Atenco.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon-wrapper">🏟️</div>
+            <h3>SEDE</h3>
+            <p>Estadio Neza 86, escenario histórico de gran nivel.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon-wrapper">🏆</div>
+            <h3>ORGANIZA</h3>
+            <p>Omar Sanabria y el comité organizador local.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULARIO DE REGISTRO -->
+    <section id="registro" class="registro">
+      <div class="container">
+        <div class="form-wrapper">
+          <h2 class="section-title">REGISTRA A TU <span>EQUIPO</span></h2>
+          <p class="form-instruction">Completa el siguiente formulario para apartar el lugar de tu escuadra.</p>
+
+          <form id="teamForm" action="https://formspree.io/f/xljraozz" method="POST" class="registration-form">
+            <div class="form-group">
+              <label for="teamName">Nombre del Equipo *</label>
+              <input type="text" id="teamName" name="Nombre del Equipo" placeholder="Ej. Real San Mateo FC" required>
+            </div>
+
+            <div class="form-group">
+              <label for="address">Domicilio en San Mateo Atenco *</label>
+              <input type="text" id="address" name="Domicilio en San Mateo Atenco" placeholder="Calle, Número, Barrio/Colonia" required>
+            </div>
+
+            <div class="form-group">
+              <label for="userEmail">Correo Electrónico de Contacto *</label>
+              <input type="email" id="userEmail" name="Correo de Contacto" placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <div class="players-section">
+              <h3>Integrantes del Equipo (25 a 35 años) *</h3>
+              <div id="playersList" class="players-list"></div>
+              <button type="button" id="addPlayerBtn" class="btn btn-secondary">+ AGREGAR JUGADOR</button>
+            </div>
+
+            <input type="hidden" id="hiddenPlayersInput" name="Lista de Jugadores">
+
+            <div id="formStatus" class="form-status"></div>
+
+            <button type="submit" id="submitBtn" class="btn btn-submit">ENVIAR REGISTRO</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CALL TO ACTION -->
+    <section class="cta">
+      <div class="container">
+        <h2>¡FORMA PARTE DE LA COPA NEZA!</h2>
+        <p>Reúne a tu equipo, registra tu participación y demuestra de qué están hechos los equipos de San Mateo Atenco.</p>
+        <a href="#registro" class="btn btn-cta">REGISTRAR MI EQUIPO</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER FORMAL -->
+  <footer>
+    <div class="container">
+      <p class="footer-title">LA COPA NEZA</p>
+      <p class="footer-sub">Comité Organizador | San Mateo Atenco</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
